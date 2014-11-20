@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hook PUBLIC "-//Liferay//DTD Hook 6.2.0//EN" "http://www.liferay.com/dtd/liferay-hook_6_2_0.dtd">
+
+<hook>
+    <servlet-filter>
+        <servlet-filter-name>ShortUrl Filter</servlet-filter-name>
+        <servlet-filter-impl>de.ancud.shorturl.filter.ShortUrlFilterImpl</servlet-filter-impl>
+    </servlet-filter>
+    <servlet-filter-mapping>
+		<servlet-filter-name>ShortUrl Filter</servlet-filter-name>
+		<before-filter>Absolute Redirects Filter</before-filter>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+	</servlet-filter-mapping>
+</hook>

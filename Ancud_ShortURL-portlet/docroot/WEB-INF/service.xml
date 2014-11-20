@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="de.ancud.shorturl">
+	<author>David</author>
+	<namespace>shorturl</namespace>
+	
+	<entity name="ShortUrl" local-service="true" remote-service="true">
+		<column name="shortUrlId" type="long" primary="true" />
+		<column name="identifier" type="String" />
+		<column name="originalUrl" type="String" />
+		
+		<column name="companyId" type="long" />
+		<column name="groupId" type="long" />
+		<column name="userId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		
+		<order by="asc">
+			<order-column name="shortUrlId" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="Identifier" return-type="ShortUrl">
+			<finder-column name="identifier" />
+		</finder>
+		
+		<finder name="OriginalUrl" return-type="ShortUrl">
+			<finder-column name="originalUrl" />
+		</finder>
+		
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>
+	</entity>
+</service-builder>

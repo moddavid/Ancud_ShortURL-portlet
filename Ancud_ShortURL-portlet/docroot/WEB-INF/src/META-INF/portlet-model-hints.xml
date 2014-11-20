@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="de.ancud.shorturl.model.ShortUrl">
+		<field name="shortUrlId" type="long" />
+		<field name="identifier" type="String" />
+		<field name="originalUrl" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+</model-hints>
